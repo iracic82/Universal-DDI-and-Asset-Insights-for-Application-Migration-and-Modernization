@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# This script runs when the platform setup the challenge.
+#
+# The platform determines if the script was successful using the exit code of this
+# script. If the exit code is not 0, the script fails. 
+#
+
+echo "This is the setup script"
+
+set-workdir /root/infoblox-lab
+
+# Run Python scripts
+cd /root/infoblox-lab/app-migration-vnios/terraform/scripts
+sleep 480
+python3 deploy_aws_discovery.py
+sleep 120
+python3 deploy_ipam.py
+sleep 60
+python3 deploy_api_key.py
+
+
+
+source /root/.bashrc
+
+exit 0

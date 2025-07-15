@@ -1,0 +1,23 @@
+slug: app-migration-nios-x
+id: mvbwpzb5c9dc
+revision: -62135596800
+title: Infoblox - App Migration NIOS-X
+description: ""
+icon: https://play.instruqt.com/assets/tracks/e6jecxl5nvew/c31663d57dce11f7baad50af3f7dec77/assets/Infoblox-logo-for-email.png
+tags: []
+owner: infoblox
+developers:
+- iracic@infoblox.com
+instructors: []
+show_timer: true
+idle_timeout: 0
+timelimit: 14400
+lab_config:
+  extend_ttl: 0
+  sidebar_enabled: true
+  hideStopButton: false
+  feedback_recap_enabled: true
+  feedback_tab_enabled: false
+  override_challenge_layout: false
+  loadingMessages: true
+enhanced_loading: null
