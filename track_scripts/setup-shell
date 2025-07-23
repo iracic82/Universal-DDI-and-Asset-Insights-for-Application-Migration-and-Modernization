@@ -45,9 +45,9 @@ cd /root/infoblox-lab/app-migration-niosx/terraform/scripts
 sleep 10
 #python3 create_dns_gm.py
 sleep 180
-python3 create_user.py
-sleep 60
 python3 create_sandbox.py
+sleep 60
+python3 create_user.py
 sleep 60
 python3 deploy_api_key.py
 sleep 60
