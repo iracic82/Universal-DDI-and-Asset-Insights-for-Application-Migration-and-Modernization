@@ -1,22 +1,39 @@
-#!/bin/sh
+#!/bin/bash
 #
-# This script runs when the platform setup the challenge.
-#
-# The platform determines if the script was successful using the exit code of this
-# script. If the exit code is not 0, the script fails. 
+# This script runs when the platform sets up or tears down the challenge.
+# The platform determines success via the exit code — exit 0 = success.
 #
 
-echo "This is the cleanup script"
+echo "🧹 Running cleanup script..."
 
-# Run Python scripts
-cd /root/infoblox-lab/app-migration-niosx/terraform/scripts
-python3 cleanup_dns_records.py
-sleep 10
-python3 delete_sandbox.py
-sleep 10
-python3 delete_user.py
-sleep 10
-python3 clean_dns_gm.py
+cd /root/infoblox-lab/app-migration-niosx/terraform/scripts || {
+  echo "❌ Failed to cd into script directory. Exiting."
+  exit 1
+}
 
+# Run each script but don't fail the whole cleanup if one fails
 
+echo "🔧 Running cleanup_dns_records.py"
+python3 cleanup_dns_records.py || echo "⚠️ cleanup_dns_records.py failed, continuing..."
+
+sleep 10
+
+echo "🔧 Running delete_sandbox.py"
+python3 delete_sandbox.py || echo "⚠️ delete_sandbox.py failed, continuing..."
+
+sleep 10
+
+echo "🔧 Running delete_user.py"
+if [ -f user_id.txt ]; then
+  python3 delete_user.py || echo "⚠️ delete_user.py failed, continuing..."
+else
+  echo "⚠️ Skipping delete_user.py: user_id.txt not found"
+fi
+
+sleep 10
+
+echo "🔧 Running clean_dns_gm.py"
+python3 clean_dns_gm.py || echo "⚠️ clean_dns_gm.py failed, continuing..."
+
+echo "✅ Cleanup complete"
 exit 0
