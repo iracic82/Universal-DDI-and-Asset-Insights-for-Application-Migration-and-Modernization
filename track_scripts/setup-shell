@@ -11,8 +11,8 @@ pip3 install pywinrm
 pip3 install requests
 
 mkdir -p /root/infoblox-lab
-git clone https://github.com/iracic82/app-migration-vnios.git
-cp -r /root/app-migration-vnios /root/infoblox-lab/
+git clone https://github.com/iracic82/app-migration-niosx.git
+cp -r /root/app-migration-niosx /root/infoblox-lab/
 
 echo "export TF_VAR_Access_Key_AWS=${INSTRUQT_AWS_ACCOUNT_INFOBLOX_DEMO_AWS_ACCESS_KEY_ID} " >> /root/.bashrc
 echo "export TF_VAR_Access_Secret_AWS=${INSTRUQT_AWS_ACCOUNT_INFOBLOX_DEMO_AWS_SECRET_ACCESS_KEY} " >> /root/.bashrc
@@ -28,39 +28,43 @@ echo "export INSTRUQT_EMAIL=${INSTRUQT_USER_EMAIL} " >> /root/.bashrc
 echo "export AWS_REGION=eu-central-1" >> /root/.bashrc
 source ~/.bashrc
 
-cd /root/infoblox-lab/app-migration-vnios/terraform
-terraform init
-terraform apply -auto-approve
 
-sleep 60
 
 
 
 # Make sure region is exported NOW for this script/process
 export AWS_REGION="eu-central-1"
 
-# --- 5. Guacamole XML Automation (after TF apply) ---
-cd /root/infoblox-lab/app-migration-vnios/terraform
 
 
-# --- Extract GM IP from Terraform output ---
-GM_IP=$(terraform output -raw gm_public_ip)
 
-# Export to current shell session
-export GM_IP
 
-# Persist to .bashrc (if needed)
-echo "export GM_IP=${GM_IP}" >> ~/.bashrc
-
-# Optional: Confirm it worked
-echo "✅ GM_IP set to: $GM_IP"
+# Run Python scripts
+cd /root/infoblox-lab/app-migration-niosx/terraform/scripts
+#python3 setup_dns.py
+sleep 10
+#python3 create_dns_gm.py
+sleep 180
+python3 create_user.py
+sleep 60
+python3 create_sandbox.py
+sleep 60
+python3 deploy_api_key.py
+sleep 60
+python3 infoblox_create_join_token.py
 
 source ~/.bashrc
 
-#!/bin/bash
+echo "export TF_VAR_infoblox_join_token=${INFOBLOX_JOIN_TOKEN} " >> /root/.bashrc
 
-cd /root/infoblox-lab/app-migration-vnios/terraform
+source ~/.bashrc
 
+cd /root/infoblox-lab/app-migration-niosx/terraform
+terraform init
+terraform apply -auto-approve
+
+
+sleep 120
 
 # Fetch client IP (DC1) from Terraform output
 DC1_IP=$(terraform output -raw client_public_ip)
@@ -93,47 +97,16 @@ function get_password {
   echo "FAILED-TO-GET-PASSWORD"
 }
 
-escape_xml() {
-  echo "$1" | sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g' -e 's/"/\&quot;/g' -e "s/'/\&apos;/g"
-}
 
-DC1_PASS_RAW=$(get_password "$DC1_ID" ./instruqt-dc-key.pem)
-DC1_PASS=$(escape_xml "$DC1_PASS_RAW")
+source ~/.bashrc
 
-# Write Guacamole XML
-mkdir -p /config/guacamole
-cat <<EOF > /config/guacamole/user-mapping.xml
-<user-mapping>
-  <authorize username="instruqt" password="Passw0rd!">
-    <connection name="WindowsClient">
-      <protocol>rdp</protocol>
-      <param name="hostname">${DC1_IP}</param>
-      <param name="port">3389</param>
-      <param name="username">Administrator</param>
-      <param name="password">${DC1_PASS}</param>
-      <param name="ignore-cert">true</param>
-      <param name="resize-method">display-update</param>
-      <param name="enable-font-smoothing">true</param>
-    </connection>
-  </authorize>
-</user-mapping>
-EOF
-
-echo "✅ Guacamole user-mapping.xml created for ${DC1_IP}"
-
-
-# Run Python scripts
-cd /root/infoblox-lab/app-migration-vnios/terraform/scripts
+# Run Python scripts again
+cd /root/infoblox-lab/app-migration-niosx/terraform/scripts
 python3 setup_dns.py
 sleep 10
-#python3 create_dns_gm.py
-sleep 10
-python3 create_user.py
-sleep 10
-python3 create_sandbox.py
-sleep 360
-python3 create_dns_gm.py
+
+sleep 60
 
 
 # Set AWS creds
-cp ~/.aws/credentials /root/infoblox-lab/app-migration-vnios/terraform
+cp ~/.aws/credentials /root/infoblox-lab/app-migration-niosx/terraform

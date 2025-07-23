@@ -1,8 +1,21 @@
 slug: app-migration-nios-x
 id: mvbwpzb5c9dc
-revision: -62135596800
-title: Infoblox - App Migration NIOS-X
-description: ""
+revision: 1
+title: Universal DDI and Asset Insights for Application Migration and Modernization
+teaser: Seamlessly migrate your apps from on-prem to AWS using Terraform and Infoblox
+  Universal DDI, with automated IP provisioning and DNS-based traffic shifting.
+description: "\U0001F9ED Introduction\n\nYou’re working with CloudOps and NetOps teams
+  to migrate a legacy app from the data center into AWS. In this hands-on lab, you’ll
+  simulate a real-world migration using Infoblox Universal DDI for IP automation and
+  DNS Traffic Control (DTC) for smart traffic steering.\n\nYou’ll:\n- Start with a
+  running on-premises application.\n- Deploy a cloud copy in AWS using Terraform +
+  Universal DDI for IP assignment.\n- Use Infoblox DNS Traffic Control to gradually
+  shift users from on-prem to cloud.\n\nThis lab combines infrastructure automation,
+  IPAM integration, and DNS-level control to modernize your application footprint.\n\n\U0001F3AF
+  Lab Objectives\n- Deploy an AWS copy of an on-premises application using Terraform
+  and Universal DDI.\n- Leverage Infoblox DTC to control and shift traffic between
+  old and new environments.\n- Simulate a real-world migration where services are
+  moved gradually and safely."
 icon: https://play.instruqt.com/assets/tracks/e6jecxl5nvew/c31663d57dce11f7baad50af3f7dec77/assets/Infoblox-logo-for-email.png
 tags: []
 owner: infoblox

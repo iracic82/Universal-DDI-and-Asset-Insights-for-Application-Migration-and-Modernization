@@ -18,6 +18,10 @@ virtualbrowsers:
   url: https://signin.aws.amazon.com/console
 - name: infoblox-gm-ui
   url: https://${_SANDBOX_ID}-infoblox-app.iracictechguru.com
+- name: infoblox
+  url: https://csp.infoblox.com/
+- name: lab
+  url: https://infoblox-igor.s3.eu-west-1.amazonaws.com/Infoblox+Application+Migration.png
 aws_accounts:
 - name: infoblox-demo
   services:
@@ -41,3 +45,11 @@ aws_accounts:
   - us-east-1
   managed_policies:
   - arn:aws:iam::aws:policy/AdministratorAccess
+secrets:
+- name: Infoblox_Token
+- name: DEMO_AWS_ACCESS_KEY_ID
+- name: DEMO_AWS_SECRET_ACCESS_KEY
+- name: TF_VAR_windows_admin_password
+- name: DEMO_HOSTED_ZONE_ID
+- name: INFOBLOX_PASSWORD
+- name: INFOBLOX_EMAIL

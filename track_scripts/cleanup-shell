@@ -9,7 +9,7 @@
 echo "This is the cleanup script"
 
 # Run Python scripts
-cd /root/infoblox-lab/app-migration-vnios/terraform/scripts
+cd /root/infoblox-lab/app-migration-niosx/terraform/scripts
 python3 cleanup_dns_records.py
 sleep 10
 python3 delete_sandbox.py
