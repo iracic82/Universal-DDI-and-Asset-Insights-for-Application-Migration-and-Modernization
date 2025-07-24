@@ -480,7 +480,7 @@ http://app.infolab.com:5080
 ![Screenshot 2025-07-21 at 13.10.52.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/35382c4ea2e9ddc9489c6520d9a8f4c1/assets/Screenshot%202025-07-21%20at%2013.10.52.png)
 
 > [!IMPORTANT]
-> NOTE:Go to Dowloads folder.
+> NOTE:💡 Navigate to your Downloads folder before running the script.
 
 ```run
 cd $HOME\Downloads
