@@ -315,7 +315,13 @@ You should see the “Hi folks!” portal confirming:
 
 🎯 Goal
 
-Create a DTC pool with both app endpoints and gradually shift traffic from the on-prem IIS app to the AWS-deployed instance, ensuring no user disruption.
+We will create a DTC pool that includes two application endpoints and gradually shift traffic from the on-prem instance to the cloud-deployed one, ensuring seamless user experience without disruption.
+1.	First, we’ll define two DTC servers:
+- **Srv1**: Represents the on-prem IIS application, running at IP** 10.100.0.120**
+- **Srv2**: Represents the cloud-hosted application post-migration, with IP **10.100.0.10**
+2.	Both servers will be added to the DTC pool.
+3.	During migration, we will move away from using static IPs. Instead, we will assign an FQDN (fully qualified domain name) to the new cloud application (Srv2) — enabling flexible identity and cloud-native scaling.
+4.	Traffic will be gradually shifted from Srv1 to Srv2, allowing for a controlled, low-risk transition with no downtime.
 
 
 🛠 Actions
