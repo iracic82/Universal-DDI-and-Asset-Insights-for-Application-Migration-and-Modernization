@@ -188,7 +188,7 @@ You can verify this pre-deployment in two ways:
 •	🧾 Terraform Output – Run terraform output in the repo directory to view key variables and resource info like instance IPs, VPC IDs, etc.
 
 ```run
-cd ~/infoblox-lab/Infoblox-PoC/terraform
+cd ~/infoblox-lab/app-migration-niosx/terraform
 terraform output
 ```
 
