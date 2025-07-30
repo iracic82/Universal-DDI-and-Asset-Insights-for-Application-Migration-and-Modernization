@@ -36,6 +36,8 @@ aws_accounts:
   - route53
   - route53resolver
   - sns
+  - dynamodb
+  - events
   regions:
   - eu-central-1
   - eu-north-1
