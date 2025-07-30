@@ -173,7 +173,7 @@ On the login screen, choose IAM Account (not root).
 
 Now that you’ve logged into both cloud consoles, it’s time to deploy the infrastructure that reflects the architecture shown in the lab diagram.
 
-👉 Switch back to the “>_ Shell” tab in the left-side panel of your Instruqt lab to proceed.
+👉 Switch back to the “>_ Jumpstation” tab in the left-side panel of your Instruqt lab to proceed.
 
 ### 1. Deploy AWS resources in EU
 
