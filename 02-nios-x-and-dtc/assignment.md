@@ -434,7 +434,7 @@ Inside this pool, we’re leveraging the DTC Pool’s internal ratio mechanism t
 ⸻
 
 4. Click Next
-5. Select the appropriate pool that we created in the one of previous steps and keep the settins as you see below
+5. Select the appropriate pool that we created in the one of previous steps and keep the settings as you see below
 
 ![Screenshot 2025-07-21 at 12.03.54.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/0fcfd48e709529e40de6985f0d841222/assets/Screenshot%202025-07-21%20at%2012.03.54.png)
 
