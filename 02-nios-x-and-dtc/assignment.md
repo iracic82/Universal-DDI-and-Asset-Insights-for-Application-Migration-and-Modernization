@@ -368,6 +368,10 @@ Lab
 ```
 3.	Set the Load Balancing Method to **Ratio**
 
+
+> [!NOTE]
+> NOTE: Enable the “Override default TTL” option, then set your record’s TTL value to 10 seconds.
+
 ![Screenshot 2025-07-21 at 11.50.03.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/8e7fe8e9375d625bbb7435b220759689/assets/Screenshot%202025-07-21%20at%2011.50.03.png)
 
 4.	Under Servers, click Add Server twice:
