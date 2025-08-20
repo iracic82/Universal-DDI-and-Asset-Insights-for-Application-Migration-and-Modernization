@@ -13,6 +13,11 @@ cd /root/infoblox-lab/app-migration-niosx/terraform/scripts || {
 
 # Run each script but don't fail the whole cleanup if one fails
 
+echo "🔧 Running purge_discovery_jobs.py"
+python3 purge_discovery_jobs.py || echo "⚠️ purge_discovery_jobs.py failed, continuing..."
+
+sleep 10
+
 echo "🔧 Running cleanup_dns_records.py"
 python3 cleanup_dns_records.py || echo "⚠️ cleanup_dns_records.py failed, continuing..."
 
