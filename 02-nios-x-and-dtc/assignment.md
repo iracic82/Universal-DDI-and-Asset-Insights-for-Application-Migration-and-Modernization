@@ -2,7 +2,7 @@
 slug: nios-x-and-dtc
 id: xfewfjl4ixe9
 type: challenge
-title: Configure NIOS-X, Deploy Application in AWS and Perform Migration
+title: Configure NIOS-X, Deploy Application in AWS and Migrate
 teaser: Configure NIOS-X authoritative DNS, deploy the cloud application in AWS using
   Terraform + IPAM, and set up DNS Traffic Control to shift traffic from on-prem to
   the cloud.
