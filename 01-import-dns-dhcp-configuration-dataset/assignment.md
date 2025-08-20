@@ -183,7 +183,7 @@ To save time and avoid long waits during the lab, core resources have already be
 
 You can verify this pre-deployment in two ways:
 
-•	🔍 AWS Console – Navigate to the relevant services (EC2, VPC, TGW, etc.) and confirm that the resources are already in place according to the LAB Diagram.
+•	🔍 AWS Console – Navigate to the relevant services (EC2, VPC, TGW, etc.) and confirm that the resources are already in place according to the LAB Diagram.Make sure you switch to the EU-Central-1 region, as specified in the Lab Diagram.
 
 •	🧾 Terraform Output – Run terraform output in the repo directory to view key variables and resource info like instance IPs, VPC IDs, etc.
 
