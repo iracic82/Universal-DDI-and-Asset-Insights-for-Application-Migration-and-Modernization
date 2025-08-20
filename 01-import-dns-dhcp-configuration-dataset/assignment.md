@@ -185,12 +185,14 @@ You can verify this pre-deployment in two ways:
 
 •	🔍 AWS Console – Navigate to the relevant services (EC2, VPC, TGW, etc.) and confirm that the resources are already in place according to the LAB Diagram.Make sure you switch to the EU-Central-1 region, as specified in the Lab Diagram.
 
-•	🧾 Terraform Output – Run terraform output in the repo directory to view key variables and resource info like instance IPs, VPC IDs, etc.
+•	🧾 Terraform Output – Run terraform output in the repo directory to view key variables and resource info like instance IPs.
 
 ```run
 cd ~/infoblox-lab/app-migration-niosx/terraform
 terraform output
 ```
+
+![Screenshot 2025-08-20 at 10.57.09.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/609a29e2499dc5f80aea9db7e9eb86ab/assets/Screenshot%202025-08-20%20at%2010.57.09.png)
 
 If you’re curious, the actual Terraform code used is available in the **Editor** window of this lab. Feel free to explore it and see how each resource is defined and managed.
 
