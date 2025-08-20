@@ -329,7 +329,7 @@ We will create a DTC pool that includes two application endpoints and gradually 
 ### ✅ Step 1: Access the DNS Traffic Control Section
 
 From the Infoblox UI:
-	•	Navigate to DTC : Configure→ Networking →DNS → DTC
+	•	Navigate to DTC : Configure→ Networking →DNS → DTC → DTC Servers
 
 ![Screenshot 2025-07-21 at 11.39.55.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/aeb3121c24af8fb6f3097cc74648c11b/assets/Screenshot%202025-07-21%20at%2011.39.55.png)
 
