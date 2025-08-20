@@ -317,7 +317,7 @@ You should see the “Hi folks!” portal confirming:
 
 We will create a DTC pool that includes two application endpoints and gradually shift traffic from the on-prem instance to the cloud-deployed one, ensuring seamless user experience without disruption.
 1.	First, we’ll define two DTC servers:
-- **Srv1**: Represents the on-prem IIS application, running at IP** 10.100.0.120**
+- **Srv1**: Represents the on-prem IIS application, running at IP **10.100.0.120**
 - **Srv2**: Represents the cloud-hosted application post-migration, with IP **10.100.0.10**
 2.	Both servers will be added to the DTC pool.
 3.	During migration, we will move away from using static IPs. Instead, we will assign an FQDN (fully qualified domain name) to the new cloud application (Srv2) — enabling flexible identity and cloud-native scaling.
@@ -329,7 +329,7 @@ We will create a DTC pool that includes two application endpoints and gradually 
 ### ✅ Step 1: Access the DNS Traffic Control Section
 
 From the Infoblox UI:
-	•	Navigate to DTC : Configure→ Networking →DNS → DTC → DTC Servers
+	•	Navigate to DTC : Configure→ Networking →DNS → DTC
 
 ![Screenshot 2025-07-21 at 11.39.55.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/aeb3121c24af8fb6f3097cc74648c11b/assets/Screenshot%202025-07-21%20at%2011.39.55.png)
 
@@ -375,7 +375,7 @@ Lab
 ![Screenshot 2025-07-21 at 11.50.03.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/8e7fe8e9375d625bbb7435b220759689/assets/Screenshot%202025-07-21%20at%2011.50.03.png)
 
 4.	Under Servers, click Add Server twice:
-- Member 1: Srv1 (e.g., 10.0.0.10) - weight 100
+- Member 1: Srv1 (e.g., 10.100.0.120) - weight 100
 - Member 2: Srv2 (e.g., 10.100.0.10) - weight 1
 
 👉 This means: almost all DNS responses will return the IP of Srv1 ( which is on-prem application ) from this pool — unless Srv1 is down or fails health checks.
