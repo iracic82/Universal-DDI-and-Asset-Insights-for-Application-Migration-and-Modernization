@@ -13,7 +13,7 @@ set-workdir /root/infoblox-lab
 # Run Python scripts
 cd /root/infoblox-lab/app-migration-niosx/terraform/scripts
 sleep 480
-python3 deploy_aws_discovery.py
+python3 deploy_aws_discovery_final.py
 sleep 360
 python3 deploy_ipam.py
 sleep 30 
