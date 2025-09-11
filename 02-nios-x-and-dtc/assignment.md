@@ -155,7 +155,9 @@ Ensure your NIOS-X-as-a-Service instance is online, healthy, and ready to be ass
 - Check the Last Seen timestamp is recent (≠ stale)
 
 
-	![Screenshot 2025-07-21 at 10.20.09.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/42beb9da1b58c605d8498ac17fa04b6f/assets/Screenshot%202025-07-21%20at%2010.20.09.png)
+![Screenshot 2025-09-11 at 09.33.32.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/3fd2b5bee9a32578a5399cfc9adba1f6/assets/Screenshot%202025-09-11%20at%2009.33.32.png)
+
+
 
 
 ✅ Validation
@@ -171,12 +173,14 @@ cd  /root/infoblox-lab/app-migration-niosx/terraform/scripts
 python3 enable_service_dns.py
 ```
 
+
 ![Screenshot 2025-07-21 at 10.33.33.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/b9f52f50761e3a8319ddea824c91cdff/assets/Screenshot%202025-07-21%20at%2010.33.33.png)
 
 Head over to Configure → Servers, expand your NIOS-X server, and you’ll see that the DNS service is now active and showing as “Online” — you’re good to go.
 
+![Screenshot 2025-09-11 at 09.35.25.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/e3bfd0a65a11bc2f4cb3068fa503186f/assets/Screenshot%202025-09-11%20at%2009.35.25.png)
 
-![Screenshot 2025-07-21 at 10.34.51.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/dd3488512cf9f54f3dda70aa1cfa7f19/assets/Screenshot%202025-07-21%20at%2010.34.51.png)
+
 
 
 Now navigate to **Configure → Networking → DNS.**
@@ -184,12 +188,17 @@ Under the default DNS view, locate the zone **infolab.com** and click Edit.
 
 In the Authoritative Servers section, make sure to select your NIOS-X server and move it to the right-hand column to assign it as the authoritative server for this zone.
 
-![Screenshot 2025-07-21 at 10.40.17.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/88d9bc1412262d76808fda01425a532c/assets/Screenshot%202025-07-21%20at%2010.40.17.png)
+![Screenshot 2025-09-11 at 09.36.37.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/4f3353894a1e69d2da2f33f3b30df38d/assets/Screenshot%202025-09-11%20at%2009.36.37.png)
 
+
+
+![Screenshot 2025-09-11 at 09.36.54.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/3dcb1ff72f296488361f644a3c192a1f/assets/Screenshot%202025-09-11%20at%2009.36.54.png)
 
 As a final step, refresh the page. You’ll now see that your NIOS-X server is listed as the authoritative server for the infolab.com zone — confirming that the delegation is complete.
 
-![Screenshot 2025-07-21 at 10.40.42.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/268783d1b3e5e1e710bf12651fbf804d/assets/Screenshot%202025-07-21%20at%2010.40.42.png)
+![Screenshot 2025-09-11 at 09.37.22.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/9ca703f105c1405193683b9b44d71d5f/assets/Screenshot%202025-09-11%20at%2009.37.22.png)
+
+
 
 
 
@@ -342,17 +351,18 @@ From the Infoblox UI:
 
 2.	Click on “Create DTC Server,” assign a name, and leave the remaining configuration settings as shown in the screenshot below.
 
-![Screenshot 2025-07-21 at 11.43.23.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/e5a978ed898d50251a46d935c247dfe5/assets/Screenshot%202025-07-21%20at%2011.43.23.png)
+![Screenshot 2025-09-11 at 10.03.01.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/6d226be1936c4fd18a1b3a01f5f66caf/assets/Screenshot%202025-09-11%20at%2010.03.01.png)
+
 
 3. Clikc "Save&Close"
 
 4. Repeat the previous steps ( 1. - 3. )  to create another DTC Server.
 Just make sure to assign a new name and keep the rest of the configuration consistent with image below.
 
-![Screenshot 2025-07-21 at 11.45.21.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/b55a6e250792b9913eb3981f1e162011/assets/Screenshot%202025-07-21%20at%2011.45.21.png)
+![Screenshot 2025-09-11 at 10.03.32.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/0fc628455686cef5381368a2ff78ebc0/assets/Screenshot%202025-09-11%20at%2010.03.32.png)
 
+![Screenshot 2025-09-11 at 10.03.54.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/185c2d716d884c5de6dd5dcab8e6f613/assets/Screenshot%202025-09-11%20at%2010.03.54.png)
 
-![Screenshot 2025-07-21 at 11.46.31.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/8261cdaa2c65aa5e025799c362257b94/assets/Screenshot%202025-07-21%20at%2011.46.31.png)
 
 
 ### ✅ Step 3: Create a DTC Pool
@@ -372,7 +382,9 @@ Lab
 > [!NOTE]
 > NOTE: Enable the “Override default TTL” option, then set your record’s TTL value to 10 seconds.
 
-![Screenshot 2025-07-21 at 11.50.03.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/8e7fe8e9375d625bbb7435b220759689/assets/Screenshot%202025-07-21%20at%2011.50.03.png)
+![Screenshot 2025-09-11 at 10.32.13.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/18661f8c0f4f416c2384faa3f94cb52b/assets/Screenshot%202025-09-11%20at%2010.32.13.png)
+
+
 
 4.	Under Servers, click Add Server twice:
 - Member 1: Srv1 (e.g., 10.100.0.120) - weight 100
@@ -380,13 +392,17 @@ Lab
 
 👉 This means: almost all DNS responses will return the IP of Srv1 ( which is on-prem application ) from this pool — unless Srv1 is down or fails health checks.
 
-![Screenshot 2025-07-21 at 12.31.15.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/6fbb0868aba54e8a66eaf3c646ce31c1/assets/Screenshot%202025-07-21%20at%2012.31.15.png)
+![Screenshot 2025-09-11 at 10.32.31.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/ab688166a04c81702e149e3cde8ad4f1/assets/Screenshot%202025-09-11%20at%2010.32.31.png)
+
+
 
 
 5. Click Next
 6. Select HTTP health checks and move it to the right
 
-![Screenshot 2025-07-21 at 11.54.13.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/f11e268c3f616ce8a1410c51df6a4df4/assets/Screenshot%202025-07-21%20at%2011.54.13.png)
+![Screenshot 2025-09-11 at 10.32.45.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/ad34c716bd222e3d9e77b9fbc15d6272/assets/Screenshot%202025-09-11%20at%2010.32.45.png)
+
+
 
 7. Click Next
 8. Click Save&Close
@@ -399,7 +415,9 @@ Lab
 
 In the health check settings, change the port to 5080 instead of the default 80, as shown in the image below.
 
-![Screenshot 2025-07-21 at 11.58.52.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/1ed8f4dead3fdbb91b3fd98650d6421f/assets/Screenshot%202025-07-21%20at%2011.58.52.png)
+![Screenshot 2025-09-11 at 10.37.42.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/c41b3a51f587ef01d449d27ee7421d17/assets/Screenshot%202025-09-11%20at%2010.37.42.png)
+
+
 
 3.Click Save&Close
 
@@ -413,9 +431,9 @@ In the health check settings, change the port to 5080 instead of the default 80,
 3. Give it the name Lab and keep the settings as you see below
 
 
+![Screenshot 2025-09-11 at 10.38.27.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/556f96dea528c27d0a0d7aa68f00ac6a/assets/Screenshot%202025-09-11%20at%2010.38.27.png)
 
 
-![Screenshot 2025-07-21 at 12.02.35.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/b7b96ba71eaefc138f9bb34600e2bcd4/assets/Screenshot%202025-07-21%20at%2012.02.35.png)
 
 ⸻
 
@@ -436,7 +454,9 @@ Inside this pool, we’re leveraging the DTC Pool’s internal ratio mechanism t
 4. Click Next
 5. Select the appropriate pool that we created in the one of previous steps and keep the settings as you see below
 
-![Screenshot 2025-07-21 at 12.03.54.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/0fcfd48e709529e40de6985f0d841222/assets/Screenshot%202025-07-21%20at%2012.03.54.png)
+![Screenshot 2025-09-11 at 10.42.08.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/a86db491d64f1bb20d87b2cc55e86393/assets/Screenshot%202025-09-11%20at%2010.42.08.png)
+
+
 
 6. Click Next
 7. Click Save&Close
@@ -450,7 +470,9 @@ Inside this pool, we’re leveraging the DTC Pool’s internal ratio mechanism t
 
 2. Click Create LBDN and keep the settings as you see on the picture below
 
-![Screenshot 2025-07-21 at 12.37.13.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/332a10ae25666731ffb52b479757d580/assets/Screenshot%202025-07-21%20at%2012.37.13.png)
+![Screenshot 2025-09-11 at 10.43.02.png](https://play.instruqt.com/assets/tracks/mvbwpzb5c9dc/bbc8a290caf863bfc7fc87170a3ef1f3/assets/Screenshot%202025-09-11%20at%2010.43.02.png)
+
+
 
 3. Click Save&Close
 
