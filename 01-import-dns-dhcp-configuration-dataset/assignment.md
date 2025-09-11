@@ -230,7 +230,7 @@ Your user account and sandbox have already been created. The next step is to set
 
 **Your Sandbox ID**
 ```
-[[ Instruqt-Var key="Sandbox_ID" hostname="shell" ]]
+[[ Instruqt-Var key="_SANDBOX_ID" hostname="shell" ]]
 ```
 
 ---
