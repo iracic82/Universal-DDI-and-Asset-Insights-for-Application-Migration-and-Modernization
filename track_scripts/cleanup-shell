@@ -24,6 +24,7 @@ python3 cleanup_dns_records.py || echo "⚠️ cleanup_dns_records.py failed, co
 sleep 10
 
 echo "🔧 Running delete_sandbox.py"
+Infoblox_Token=${Infoblox_Token}
 python3 delete_sandbox.py || echo "⚠️ delete_sandbox.py failed, continuing..."
 
 sleep 10
